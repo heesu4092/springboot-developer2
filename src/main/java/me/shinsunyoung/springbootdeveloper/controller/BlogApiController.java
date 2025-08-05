@@ -17,6 +17,12 @@ import java.util.List;
 @RestController
 public class BlogApiController {
     private final BlogService blogService;
+
+    @GetMapping("/")
+    public String root() {
+        return "Spring Boot App is running!";
+    }
+
     @PostMapping("/api/articles")
     public ResponseEntity<Article> addArticle(
             @RequestBody AddArticleRequest request
